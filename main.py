@@ -82,8 +82,10 @@ class MidiDevsDialog(QtWidgets.QDialog):
         self.outputDevicesList.currentIndexChanged.connect(self.updateDeviceLabels)
 
         # call the setMidiDevice custom slot to tell everyone which one is the selected device (output)
-        self.outputDevicesList.connect(self.setMidiDevice)
-        #self.outputDevicesList.currentIndexChanged.connect(self.setMidiDevice)
+        try:
+            self.outputDevicesList.connect(self.setMidiDevice)
+        except AttributeError:
+            self.outputDevicesList.currentIndexChanged.connect(self.setMidiDevice)
         self.outputDevicesList.setCurrentIndex(-1)
         # send true if OK is clicked
         self.dialogOK.clicked.connect(self.accept)
