@@ -39,7 +39,7 @@ logger.info('Starting the ua100mix')
 #       The UA-100 discovery routine is based on WHAT? - ****
 # THIS NEED REVISION. Is it any useful?
 
-REAL_UA_MODE = 0
+REAL_UA_MODE = 1
 logger.debug('Setting REAL_UA_MODE to %s', REAL_UA_MODE )
 
 logger.info('Importing some required modules')
